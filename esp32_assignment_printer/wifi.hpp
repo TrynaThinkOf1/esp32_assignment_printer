@@ -12,7 +12,7 @@ static int initWifi(const char* SSID, const char* PASS) {
   // WiFi connection
   if (WiFi.status() != WL_CONNECTED) {
     WiFi.begin(SSID, PASS);
-    for (int i = 0; i < 100; i++) {
+    for (int i = 0; i < 10; i++) { // 10 seconds of retries before failure
       if (WiFi.status() == WL_CONNECTED) break;
 
       delay(1000);
